@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <script type="module" src="../lib/main.js"></script>
+    <link rel="stylesheet" href="./style/main.css">
+</head>
+
+<body>
+    <h1>Form inputs</h1>
+
+    <div data-partial-name="foPartial">
+        <h2>
+            <p data-partial-insert-arg="headline"></p>
+        </h2>
+        <table>
+            <tr>
+                <th>Input field</th>
+                <th>Output</th>
+            </tr>
+            <tr>
+                <td>
+                    <p data-partial-insert-arg="input"></p>
+                </td>
+                <td>
+                    <p data-partial-insert-arg="output"></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <main>
+        <span data-insert-partial="foPartial"
+            data-partial-args='{"headline":"Checkbox", "input":"<input type=\"checkbox\" id=\"input1\">", "output":"<p data-form-output-of=\"input1\"></p>"}'></span>
+
+        <span data-insert-partial="foPartial"
+            data-partial-args='{"headline":"Color", "input":"<input type=\"color\" id=\"input2\">", "output":"<p data-form-output-of=\"input2\"></p>"}'></span>
+
+        <span data-insert-partial="foPartial"
+            data-partial-args='{"headline":"Date", "input":"<input type=\"date\" id=\"input3\">", "output":"<p data-form-output-of=\"input3\"></p>"}'></span>
+
+        <span data-insert-partial="foPartial"
+            data-partial-args='{"headline":"File", "input":"<input type=\"file\" id=\"input4\">", "output":"<p data-form-output-of=\"input4\"></p>"}'></span>
+
+        <span data-insert-partial="foPartial"
+            data-partial-args='{"headline":"Number input", "input":"<input type=\"number\" id=\"input5\">", "output":"<p data-form-output-of=\"input5\"></p>"}'></span>
+
+        <span data-insert-partial="foPartial"
+            data-partial-args='{"headline":"*Password*", "input":"<input type=\"password\" id=\"input6\">", "output":"<p data-form-output-of=\"input6\"></p>"}'></span>
+
+        <span data-insert-partial="foPartial"
+            data-partial-args='{"headline":"Range", "input":"<input type=\"range\" id=\"input7\">", "output":"<p data-form-output-of=\"input7\"></p>"}'></span>
+
+        <span data-insert-partial="foPartial"
+            data-partial-args='{"headline":"Text input", "input":"<input type=\"text\" id=\"input8\">", "output":"<p data-form-output-of=\"input8\"></p>"}'></span>
+
+        <span data-insert-partial="foPartial"
+            data-partial-args='{"headline":"Time", "input":"<input type=\"time\" id=\"input9\">", "output":"<p data-form-output-of=\"input9\"></p>"}'></span>
+
+    </main>
+</body>
+
+</html>

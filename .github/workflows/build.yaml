@@ -1,0 +1,38 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install node + npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+    
+      - name: Prepare env
+        run: |
+          npm install webpack webpack-cli -g
+    
+      - uses: actions/checkout@v2
+        name: Checkout
+        
+      - name: Run webpack
+        run: webpack
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: js-helpers.min.js
+          path: "./dist/js-helpers.min.js"
+
+      - name: Upload Release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: "./dist/js-helpers.min.js"
+          asset_name: js-helpers.min.js
+          tag: Release
+          overwrite: true

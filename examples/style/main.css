@@ -1,0 +1,27 @@
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 500px);
+    gap: 10px;
+}
+
+div {
+    border: 1px solid black;
+    padding: 10px;
+    width: 480px;
+}
+
+div h2 {
+    margin-top: 0;
+}
+
+div td {
+    min-width: 200px;
+}
+
+div td:last-child {
+    border: 3px dotted green;
+}
+
+div input {
+    width: 100%;
+}

@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script type="module" src="../lib/main.js"></script>
+        <link rel="stylesheet" href="./style/main.css">
+    </head>
+    <body>
+        <h1>Partials</h1>
+
+        <div data-partial-name="partial1">
+            <p data-partial-insert-arg="name"></p>
+        </div>
+
+        <section>
+            <span data-insert-partial="partial1" data-partial-args='{"name":"<strong>Partials Test</strong>"}'></span>
+        </section>
+    </body>
+</html>
